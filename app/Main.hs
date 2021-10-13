@@ -3,4 +3,4 @@ module Main where
 import Lib
 
 main :: IO ()
-main = print (testMultyIf 0 ++ " " ++ testMultyIf 1 ++ " " ++ testMultyIf 6)
+main = print (testMultyIf3 0 ++ " " ++ testMultyIf3 2 ++ " " ++ testMultyIf3 6 ++ " " ++ testMultyIf3 3)

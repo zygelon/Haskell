@@ -1,7 +1,9 @@
 {-# LANGUAGE MultiWayIf #-}
 module Lib
     ( evenTestPrint,
-      testMultyIf
+      testMultyIf,
+      testMultyIf2,
+      testMultyIf3
     ) where
 
 
@@ -34,6 +36,22 @@ testMultyIf num =
      | num == 4 -> "four"
      | otherwise -> "uknown"
 
+testMultyIf2 :: Int -> String
+testMultyIf2 num
+     | num == 0 = "zero"
+     | num == 1 = "one"
+     | num == 2 = "two"
+     | num == 3 = "three"
+     | num == 4 = "four"
+     | otherwise = "uknown"
+
+testMultyIf3 :: Int -> String
+testMultyIf3 0 = "zero"
+testMultyIf3 1 = "one"
+testMultyIf3 2 = "two"
+testMultyIf3 3 = "three"
+testMultyIf3 4 = "four"
+testMultyIf3 _ = "uknown"
 
 printFunc :: IO ()
 printFunc = putStrLn "HI HASKELL"

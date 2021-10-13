@@ -23,6 +23,8 @@ checkEven a = if a `mod` 2 == 0 then "Even" else "Odd"
 evenTestPrint :: IO ()
 evenTestPrint = print (checkEven 5 ++ " " ++ checkEven 6)
 
+-- | names Guard
+-- extension to use it {-# LANGUAGE MultiWayIf #-}
 testMultyIf :: Int -> String
 testMultyIf num =
   if | num == 0 -> "zero"

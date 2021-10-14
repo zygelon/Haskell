@@ -1,6 +1,8 @@
 module Main where
 
 import Lib
+import Lib2
 
 main :: IO ()
-main = print (testMultyIf4 0 ++ " " ++ testMultyIf4 2 ++ " " ++ testMultyIf4 6 ++ " " ++ testMultyIf4 3)
+main = putStrLn ((testLocalVar 5) ++ "   " ++ (testLocalVar 1) ++ "\n" ++ testLocalVar 20)
+

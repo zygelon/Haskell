@@ -11,9 +11,9 @@ testLocalVar num =
         west  = 3
         wtf strangeVal = if strangeVal > 10 then "Strange WTF" else "not Strange WTF"
         in
-    --"test"
     if | num == north -> "north"
        | num == south -> "south"
        | num == west  -> "west"
+       | num == east  -> "east"
        | otherwise    -> (wtf num)
 

@@ -22,7 +22,7 @@ module Lib
 mySquare :: Int -> Int
 mySquare v = v * v
 
-mySum :: Int -> Int -> Int 
+mySum :: Int -> Int -> Int
 mySum a b = a + b
 
 checkEven :: Int -> String
@@ -60,7 +60,7 @@ testMultyIf3 4 = "four"
 testMultyIf3 _ = "uknown3"
 
 testMultyIf4 :: Int -> String
-testMultyIf4 val = 
+testMultyIf4 val =
   case val of
     0 -> "zero"
     1 -> "one"
@@ -68,6 +68,14 @@ testMultyIf4 val =
     3 -> "three"
     4 -> "four"
     _ -> "uknown4"
+
+testFuncForm :: String -> String -> String
+testFuncForm first second =
+  if testFunc1 first second && testFunc2 second first
+    then "test ret true"
+    else "test ret false"
+    where testFunc1 a b = a == b
+          testFunc2 a2 b2 = a2 == b2
 
 
 printFunc :: IO ()

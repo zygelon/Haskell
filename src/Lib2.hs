@@ -2,6 +2,7 @@
 
 module Lib2 where
 
+import Data.Char
 
 testLocalVar :: Int -> String
 testLocalVar num =
@@ -17,3 +18,18 @@ testLocalVar num =
        | num == east  -> "east"
        | otherwise    -> (wtf num)
 
+-- import Data.Char :: toUpper, chr 
+testCharFunc :: String
+testCharFunc = 
+    let a = 'a'
+        b = 'b'
+        randLetter = 'w'
+    --[] converts Char -> Ttring
+    in [toUpper a] ++ " " ++ [toUpper b] ++ " " ++ [chr(124)] ++ " " ++ [randLetter]
+
+-- import Data.Ratio
+-- toRational Float -> Ratio
+-- FromRational Ratio -> Float
+-- FromInteger, ToInteger
+
+--write in ghci ":t anyVal" to see types

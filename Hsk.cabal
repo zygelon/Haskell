@@ -27,6 +27,7 @@ library
   exposed-modules:
       Lib
       Lib2
+      TypesDoc
   other-modules:
       Paths_Hsk
   hs-source-dirs:

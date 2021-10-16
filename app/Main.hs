@@ -6,4 +6,4 @@ import Lib2
 import Data.Ratio
 
 main :: IO ()
-main = print (show (1 % 3))
+main = print (maxmin [1,5,2,10,20,-2])

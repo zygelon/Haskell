@@ -33,3 +33,26 @@ testCharFunc =
 -- FromInteger, ToInteger
 
 --write in ghci ":t anyVal" to see types
+
+myReverse :: String -> String
+myReverse args = 
+    if null args 
+    then []
+    else myReverse (tail args) ++ [head args]
+
+(+++) :: String -> String -> String
+(+++) preArgs postArgs = 
+    if null preArgs
+    then postArgs
+    else (head preArgs) : (tail preArgs +++ postArgs)
+    
+maxmin list = 
+    let h = head list
+    in if null (tail list)
+       then (h, h)
+       else ( if h > t_max then h else t_max
+            , if h < t_min then h else t_min)
+            where t = maxmin (tail list)
+                  t_max = fst t
+                  t_min = snd t
+        

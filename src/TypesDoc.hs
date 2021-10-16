@@ -1,3 +1,4 @@
+module TypesDoc where
 {-
 'Int' - range (+- 536870911) = (2^29 - 1)
 

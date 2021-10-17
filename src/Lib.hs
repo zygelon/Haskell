@@ -26,7 +26,7 @@ mySum :: Int -> Int -> Int
 mySum a b = a + b
 
 checkEven :: Int -> String
-checkEven a = if a `mod` 2 == 0 then "Even" else "Odd"
+checkEven a = if even a then "Even" else "Odd"
 
 evenTestPrint :: IO ()
 evenTestPrint = print (checkEven 5 ++ " " ++ checkEven 6)
@@ -77,6 +77,13 @@ testFuncForm first second =
     where testFunc1 a b = a == b
           testFunc2 a2 b2 = a2 == b2
 
-
-printFunc :: IO ()
-printFunc = putStrLn "HI HASKELL"
+ifFibonacci :: Integer -> Maybe Integer
+ifFibonacci n = if n < 0
+    then Nothing
+    else case n of
+        0 -> Just 0
+        1 -> Just 1
+        -- n' means prime
+        n' -> let Just f1 = ifFibonacci (n' - 1)
+                  Just f2 = ifFibonacci (n' - 2)
+             in Just (f1 + f2)

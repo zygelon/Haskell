@@ -55,4 +55,3 @@ maxmin list =
             where t = maxmin (tail list)
                   t_max = fst t
                   t_min = snd t
-        

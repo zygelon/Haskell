@@ -5,4 +5,4 @@ import Lib2
 
 
 main :: IO ()
-main = print ("Hi")
+main = print (testBinomial 3 2)

@@ -87,3 +87,26 @@ ifFibonacci n = if n < 0
         n' -> let Just f1 = ifFibonacci (n' - 1)
                   Just f2 = ifFibonacci (n' - 2)
              in Just (f1 + f2)
+
+ifFibonacci2 n | n < 0      = Nothing
+ifFibonacci2 0              = Just 0
+ifFibonacci2 1              = Just 1
+ifFibonacci2 n              = let Just f1 = ifFibonacci (n - 1)
+                                  Just f2 = ifFibonacci (n - 2)
+                              in Just (f1 + f2)
+
+-- Compile Error, don't understand why
+
+testBinomial n k | k < 0        = Nothing
+testBinomial n k | n < 0        = Nothing
+testBinomial n 0                = Just 1
+testBinomial n k | n == k       = Just 1
+testBinomial n k                = let Just f1 = testBinomial (n - 1) (k - 1)
+                                      Just f2 = testBinomial (n - 1) k
+                                  in Just (f1 + f2)
+
+
+
+testBinomial2 _ 0 = 1
+testBinomial2 x y | x == y = 1
+testBinomial2 n k = testBinomial2 (n - 1) (k - 1) + testBinomial2 (n - 1) k

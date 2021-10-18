@@ -1,6 +1,6 @@
 {-# LANGUAGE MultiWayIf #-}
 
-module Lib2 where
+module Lib2Test where
 
 import Data.Char
 

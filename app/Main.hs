@@ -1,7 +1,8 @@
 module Main where
 
-import Lib
-import Lib2
+import Lib1Test
+import Lib2Test
+import Lib3Test
 
 
 main :: IO ()

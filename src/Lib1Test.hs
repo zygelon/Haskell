@@ -1,11 +1,11 @@
 {-# LANGUAGE MultiWayIf #-}
 
-module Lib where
+module Lib1Test where
 
 
 {-
 export example
-module Lib
+module Lib1Test
     ( evenTestPrint,
       testMultyIf,
       testMultyIf2,

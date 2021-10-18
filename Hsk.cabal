@@ -25,8 +25,9 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
-      Lib2
+      Lib1Test
+      Lib2Test
+      Lib3Test
       TypesDoc
   other-modules:
       Paths_Hsk

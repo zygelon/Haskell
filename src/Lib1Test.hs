@@ -130,6 +130,7 @@ myListSum =  accumSum 0
 multiplyByN :: Integer -> (Integer -> Integer)
 multiplyByN n = \x -> n * x
 -- Example :: map (multiplyByN 5) [1, 2, 3] = [5, 10, 15]
+
 filterANumber :: Integer -> [Integer] -> [Integer]
 filterANumber n list = filter (\x -> x == n) list
 

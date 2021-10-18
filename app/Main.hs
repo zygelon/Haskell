@@ -5,4 +5,4 @@ import Lib2
 
 
 main :: IO ()
-main = print (testBinomial 3 2)
+main = print (testAckermann 2 1)

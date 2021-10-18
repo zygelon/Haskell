@@ -124,3 +124,16 @@ myListSum =  accumSum 0
         accumSum sumVal [] = sumVal
         accumSum sumVal (x:xs) =
           accumSum (sumVal + x) xs
+
+-- Anonymous Func | map (\x -> x + 2) [1, 2, 3]
+
+multiplyByN :: Integer -> (Integer -> Integer)
+multiplyByN n = \x -> n * x
+-- Example :: map (multiplyByN 5) [1, 2, 3] = [5, 10, 15]
+filterANumber :: Integer -> [Integer] -> [Integer]
+filterANumber n list = filter (\x -> x == n) list
+
+filterNot :: (a -> Bool) -> [a] -> [a]
+filterNot func (x:xs) | not $ func x      = x : filterNot func xs
+                      | otherwise         = filterNot func xs
+filterNot _ [] = []

@@ -5,5 +5,5 @@ import Lib2Test
 import Lib3Test
 
 
-main :: IO ()
-main = print (myListSum [2, 5, 10, 20, 3, 8])
+
+main = print $ filterNot even [2,4,3,423,5,5,6,23,42,36,2,467,43,54,23]

@@ -116,3 +116,11 @@ testAckermann 0 n             = n + 1
 testAckermann m 0 | m > 0     = testAckermann (m - 1) 1
 testAckermann m n             = let insideAckermann = testAckermann m (n - 1)
                                 in testAckermann (m - 1) insideAckermann
+
+--myListSum list =  accumSum 0 list  --- Eta Reduce
+myListSum :: [Integer] -> Integer 
+myListSum =  accumSum 0
+  where accumSum :: Integer -> [Integer] -> Integer
+        accumSum sumVal [] = sumVal
+        accumSum sumVal (x:xs) =
+          accumSum (sumVal + x) xs

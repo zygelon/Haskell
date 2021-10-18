@@ -5,4 +5,4 @@ import Lib2
 
 
 main :: IO ()
-main = print (testAckermann 2 1)
+main = print (myListSum [2, 5, 10, 20, 3, 8])

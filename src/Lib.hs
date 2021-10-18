@@ -102,7 +102,7 @@ testBinomial n k | n < 0        = Nothing
 testBinomial n 0                = Just 1
 testBinomial n k | n == k       = Just 1
 testBinomial n k                = let Just f1 = testBinomial (n - 1) (k - 1)
-                                      Just f2 = testBinomial $ n - 1 k
+                                      Just f2 = testBinomial (n - 1) k
                                   in Just $ f1 + f2
 
 

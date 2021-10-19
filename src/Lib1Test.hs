@@ -138,3 +138,17 @@ filterNot :: (a -> Bool) -> [a] -> [a]
 filterNot func (x:xs) | not $ func x      = x : filterNot func xs
                       | otherwise         = filterNot func xs
 filterNot _ [] = []
+-- Example :: print $ filterNot even [2,4,3,423,5,5,6,23,42,36,2,467,43,54,23]
+
+myUglyBubbleSort :: [Int] -> [Int]
+myUglyBubbleSort [] = []
+myUglyBubbleSort arr =
+  let internalRes = internalSort arr
+      lastElem = last internalRes
+    in myUglyBubbleSort (init internalRes) ++ [lastElem]
+    where internalSort :: [Int] -> [Int]
+          internalSort (x1:x2:xs)  | null xs = if x1 < x2 then x1:x2:xs else x2:x1:xs
+          internalSort (x1:x2:xs) = if x1 > x2 then x2:internalSort (x1:xs)
+                                    else x1 : internalSort(x2:xs)
+          internalSort (x1:xs) = x1:xs
+          internalSort [] = []

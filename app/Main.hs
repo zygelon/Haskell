@@ -6,4 +6,4 @@ import Lib3Test
 
 
 
-main = print $ filterNot even [2,4,3,423,5,5,6,23,42,36,2,467,43,54,23]
+main = print $ myUglyBubbleSort [9,9,9,9,9,9,10,100,9,-100,9,9,9,9,9]

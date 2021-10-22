@@ -118,7 +118,7 @@ testAckermann m n             = let insideAckermann = testAckermann m (n - 1)
                                 in testAckermann (m - 1) insideAckermann
 
 --myListSum list =  accumSum 0 list  --- Eta Reduce
-myListSum :: [Integer] -> Integer 
+myListSum :: [Integer] -> Integer
 myListSum =  accumSum 0
   where accumSum :: Integer -> [Integer] -> Integer
         accumSum sumVal [] = sumVal
@@ -152,3 +152,16 @@ myUglyBubbleSort arr =
                                     else x1 : internalSort(x2:xs)
           internalSort (x1:xs) = x1:xs
           internalSort [] = []
+
+
+doubleList = map (*2)
+--doubleList = map (\x -> x * 2)
+--Example :: print $ doubleList [2,4,6,74,3]
+-- from (a -> b) -> [a] -> [b]   ||TO||  [a] -> [b]
+
+doubleOdds = doubleList . filter odd
+--doubleOdds ||||| list = map (*2) $ filder odd list
+
+myFlip f = \x y -> f y x
+--myFlip f x y = f y x
+-- Example :: print (myFlip (-) 5 10)

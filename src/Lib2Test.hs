@@ -3,6 +3,7 @@
 module Lib2Test where
 
 import Data.Char
+import Data.List
 
 testLocalVar :: Int -> String
 testLocalVar num =

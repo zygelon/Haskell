@@ -6,4 +6,5 @@ import Lib3Test
 
 
 
-main = print $ myUglyBubbleSort [9,9,9,9,9,9,10,100,9,-100,9,9,9,9,9]
+--main = print $ testArea (TestCircle (0.0, 0.0) 1.0)
+main = print $ testArea (TestRectangle (7.0, 2.0) (3.0, 5.0))

@@ -165,3 +165,17 @@ doubleOdds = doubleList . filter odd
 myFlip f = \x y -> f y x
 --myFlip f x y = f y x
 -- Example :: print (myFlip (-) 5 10)
+
+{-
+Intresting construction
+
+loop = do
+    -- represents the height of one mountain, from 9 to 0.
+    hs <- replicateM 8 $ fmap (read) getLine :: IO [Int]
+    
+    -- The number of the mountain to fire on.
+    let Just x = elemIndex (maximum hs) hs
+    print x
+    
+    loop
+-}

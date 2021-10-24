@@ -1,4 +1,5 @@
 ﻿{-# LANGUAGE MultiWayIf #-}
+{-# LANGUAGE BlockArguments #-}
 
 module Lib3Test where
 import GHC.Enum (Enum(succ))
@@ -67,3 +68,43 @@ testDays :: String
 testDays = let ifDay = if Thursday > Wednesday then Thursday else Wednesday
                parsedDay = read "Friday" :: TestDay
            in show Monday ++ " " ++ show parsedDay ++ " " ++ show ifDay ++ " " ++ show (succ Saturday)
+
+data Tree a = EmptyTree | Node a (Tree a) (Tree a) deriving (Show)
+
+singletonTree :: a -> Tree a
+singletonTree x = Node x EmptyTree EmptyTree
+
+treeInsert :: (Ord a) => a -> Tree a -> Tree a
+treeInsert x EmptyTree = singletonTree x
+treeInsert x (Node a left right)
+  | x == a = Node x left right
+  | x >  a = Node a left (treeInsert x right)
+  | x <  a  = Node a (treeInsert x left) right
+
+treeElem :: (Ord a) => a -> Tree a -> Bool
+treeElem x EmptyTree = False
+treeElem x (Node a left right)
+  | x == a = True
+  | x >  a = treeElem x right
+  | otherwise = treeElem x left
+
+
+convTreeToList :: (Ord a) => Tree a -> [a]
+convTreeToList EmptyTree = []
+convTreeToList (Node x left right) = convTreeToList left ++ [x] ++ convTreeToList right
+
+treeExample = 
+  let exampleList = [8,6,4,1,7,3,5]
+      testTree = foldr treeInsert EmptyTree exampleList
+  in testTree
+
+treeExample2 = do
+  let testTree = singletonTree 5
+  print "SingetonTree 5"
+  print $ show testTree
+  print $ convTreeToList testTree
+
+  let testTree2 = treeInsert 4 testTree
+  print "Inserted 5 then 4"
+  print $ show testTree2
+  print $ show (convTreeToList testTree2)
